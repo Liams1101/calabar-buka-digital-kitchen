@@ -3,13 +3,22 @@ import { useState } from "react";
 import { Phone, MapPin, Instagram, MessageCircle, ChevronDown, Flame, UtensilsCrossed, Menu, X } from "lucide-react";
 
 import logo from "@/assets/logo.png";
-import heroSpread from "@/assets/hero-spread.jpg";
-import afang from "@/assets/afang.jpg";
-import jollof from "@/assets/jollof.jpg";
-import grilledFish from "@/assets/grilled-fish.jpg";
-import isiewu from "@/assets/isiewu.jpg";
-import banga from "@/assets/banga.jpg";
-import pineappleRice from "@/assets/pineapple-rice.jpg";
+import afangAsset from "@/assets/Afang-soup.jpg.asset.json";
+import jollofAsset from "@/assets/Jollof-rice.jpg.asset.json";
+import catfishAsset from "@/assets/Catfish.jpg.asset.json";
+import amalaAsset from "@/assets/Amala_Ewedu.jpg.asset.json";
+import nativeRiceAsset from "@/assets/Native-rice.jpg.asset.json";
+import friedRiceAsset from "@/assets/Fried-rice.jpg.asset.json";
+import pineappleAsset from "@/assets/Pineapple-fried-rice.jpg.asset.json";
+import snailAsset from "@/assets/Peppered-snail.jpg.asset.json";
+
+const afang = afangAsset.url;
+const jollof = jollofAsset.url;
+const grilledFish = catfishAsset.url;
+const isiewu = amalaAsset.url;
+const banga = nativeRiceAsset.url;
+const pineappleRice = pineappleAsset.url;
+const heroSpread = pineappleAsset.url;
 
 export const Route = createFileRoute("/")({
   component: Index,
