@@ -3,13 +3,22 @@ import { useState } from "react";
 import { Phone, MapPin, Instagram, MessageCircle, ChevronDown, Flame, UtensilsCrossed, Menu, X } from "lucide-react";
 
 import logo from "@/assets/logo.png";
-import heroSpread from "@/assets/hero-spread.jpg";
-import afang from "@/assets/afang.jpg";
-import jollof from "@/assets/jollof.jpg";
-import grilledFish from "@/assets/grilled-fish.jpg";
-import isiewu from "@/assets/isiewu.jpg";
-import banga from "@/assets/banga.jpg";
-import pineappleRice from "@/assets/pineapple-rice.jpg";
+import afangAsset from "@/assets/Afang-soup.jpg.asset.json";
+import jollofAsset from "@/assets/Jollof-rice.jpg.asset.json";
+import catfishAsset from "@/assets/Catfish.jpg.asset.json";
+import amalaAsset from "@/assets/Amala_Ewedu.jpg.asset.json";
+import nativeRiceAsset from "@/assets/Native-rice.jpg.asset.json";
+import friedRiceAsset from "@/assets/Fried-rice.jpg.asset.json";
+import pineappleAsset from "@/assets/Pineapple-fried-rice.jpg.asset.json";
+import snailAsset from "@/assets/Peppered-snail.jpg.asset.json";
+
+const afang = afangAsset.url;
+const jollof = jollofAsset.url;
+const grilledFish = catfishAsset.url;
+const isiewu = amalaAsset.url;
+const banga = nativeRiceAsset.url;
+const pineappleRice = pineappleAsset.url;
+const heroSpread = pineappleAsset.url;
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -25,29 +34,30 @@ type MenuCategory = { id: string; title: string; blurb: string; items: MenuItem[
 
 const MENU: MenuCategory[] = [
   {
+    id: "specials",
+    title: "Chef's Specials",
+    blurb: "The dishes we're famous for.",
+    featured: true,
+    items: [
+      { name: "Pineapple Fried Rice Combo", desc: "Pineapple fried rice with shrimps, chicken lap & fried plantain", price: "₦15,000" },
+      { name: "Dirty Rice", desc: "With plantain, chicken and beef chunks", price: "₦12,000" },
+      { name: "Amala & Ewedu with Omi Obe", desc: "With fish, kpomo and assorted meats", price: "₦6,000" },
+      { name: "Isiewu", desc: "Spicy goat head delicacy", price: "₦15,000" },
+      { name: "Grilled Fish", desc: "Whole fish grilled over wood fire", price: "₦12,000" },
+    ],
+  },
+  {
     id: "soups",
     title: "Soups",
     blurb: "Traditional Nigerian soups simmered slow with love.",
     items: [
-      { name: "Afang Soup", desc: "Rich blend of afang & waterleaf with assorted meat", price: "₦3,500" },
-      { name: "Vegetable Soup", desc: "Ugu & waterleaf with stockfish and periwinkle", price: "₦3,200" },
-      { name: "Banga Soup", desc: "Palm-nut broth with catfish & banga spices", price: "₦3,500" },
-      { name: "White Soup (Afia Efere)", desc: "Peppery yam-thickened broth, Calabar style", price: "₦3,800" },
-      { name: "Okra Soup", desc: "Fresh okra with assorted meats & dried fish", price: "₦2,800" },
-      { name: "Fisherman Soup", desc: "Seafood medley in a fiery pepper broth", price: "₦4,500" },
-    ],
-  },
-  {
-    id: "proteins",
-    title: "Proteins",
-    blurb: "Fresh cuts, grilled or stewed to order.",
-    items: [
-      { name: "Chicken Lap", price: "₦2,500" },
-      { name: "Goat Meat", price: "₦1,500" },
-      { name: "Catfish Head", price: "₦2,000" },
-      { name: "Turkey", price: "₦2,500" },
-      { name: "Beef", price: "₦1,200" },
-      { name: "Ponmo", price: "₦500" },
+      { name: "Afang Soup", desc: "With goat meat and eba", price: "₦4,200" },
+      { name: "Vegetable Soup", desc: "With goat meat and fufu", price: "₦4,200" },
+      { name: "Banga Soup", desc: "With catfish and fufu", price: "₦9,500" },
+      { name: "White Soup", desc: "With goat meat and garri or fufu", price: "₦4,200" },
+      { name: "Okra Soup (Goat Meat)", desc: "With goat meat and garri", price: "₦4,200" },
+      { name: "Okra Soup (Catfish)", desc: "With catfish and eba", price: "₦9,500" },
+      { name: "Fisherman Soup", desc: "With middle of fish or tail & fufu (head ₦10,500)", price: "₦9,500" },
     ],
   },
   {
@@ -55,23 +65,23 @@ const MENU: MenuCategory[] = [
     title: "Rice Dishes",
     blurb: "From smoky native pots to party jollof.",
     items: [
-      { name: "Native Rice", desc: "Palm-oil rice with vegetables & smoked fish", price: "₦2,500" },
-      { name: "Jollof Rice", desc: "The classic — smoky, spicy, unforgettable", price: "₦2,000" },
-      { name: "Fried Rice", desc: "Buttery rice tossed with liver & mixed veg", price: "₦2,200" },
-      { name: "Rice & Goat Meat Pepper Soup", desc: "White rice with a bowl of fiery pepper soup", price: "₦3,800" },
+      { name: "Native Rice", price: "₦2,500" },
+      { name: "Jollof Rice", price: "₦2,500" },
+      { name: "Rice & Goat Meat Pepper Soup", price: "₦4,700" },
+      { name: "Fried Rice", price: "₦2,500" },
     ],
   },
   {
-    id: "specials",
-    title: "Chef's Specials",
-    blurb: "The dishes we're famous for.",
-    featured: true,
+    id: "proteins",
+    title: "Proteins",
+    blurb: "Fresh cuts, grilled or stewed to order.",
     items: [
-      { name: "Pineapple Fried Rice Combo", desc: "Fried rice with shrimp served in a fresh pineapple", price: "₦5,500" },
-      { name: "Dirty Rice", desc: "Chef's signature spiced rice with assorted proteins", price: "₦4,500" },
-      { name: "Amala & Ewedu", desc: "Yam flour with jute leaf soup and gbegiri", price: "₦3,000" },
-      { name: "Isiewu", desc: "Spicy goat head delicacy with utazi leaves", price: "₦5,000" },
-      { name: "Grilled Fish", desc: "Whole tilapia grilled over wood fire, pepper sauce", price: "₦6,000" },
+      { name: "Fried Fish", price: "₦3,000" },
+      { name: "Chicken Lap", price: "₦4,500" },
+      { name: "Chicken Lap (Cut)", price: "₦2,500" },
+      { name: "Goat Meat", desc: "Per piece", price: "₦800" },
+      { name: "Catfish Head", price: "₦10,500" },
+      { name: "Catfish Middle", price: "₦9,500" },
     ],
   },
 ];
@@ -79,10 +89,12 @@ const MENU: MenuCategory[] = [
 const GALLERY = [
   { src: afang, label: "Afang Soup" },
   { src: jollof, label: "Jollof Rice" },
-  { src: grilledFish, label: "Grilled Fish" },
-  { src: isiewu, label: "Isiewu" },
-  { src: banga, label: "Banga Soup" },
+  { src: grilledFish, label: "Grilled Catfish" },
+  { src: isiewu, label: "Amala & Ewedu" },
+  { src: banga, label: "Native Rice" },
   { src: pineappleRice, label: "Pineapple Fried Rice" },
+  { src: friedRiceAsset.url, label: "Fried Rice" },
+  { src: snailAsset.url, label: "Peppered Snail" },
 ];
 
 function Index() {
