@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Phone, MapPin, Instagram, MessageCircle, ChevronDown, Flame, UtensilsCrossed, Menu, X } from "lucide-react";
 
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.jpg.asset.json";
 import afangAsset from "@/assets/Afang-soup.jpg.asset.json";
 import jollofAsset from "@/assets/Jollof-rice.jpg.asset.json";
 import catfishAsset from "@/assets/Catfish.jpg.asset.json";
@@ -107,7 +107,7 @@ function Index() {
       <header className="sticky top-0 z-50 bg-brand-black text-white">
         <div className="container-x flex items-center justify-between py-3">
           <a href="#top" className="flex items-center gap-3">
-            <img src={logo} alt="Calabar Buka & Grills logo" width={44} height={44} className="h-11 w-11 rounded-full bg-white p-0.5" />
+            <img src={logo.url} alt="Calabar Buka & Grills logo" width={44} height={44} className="h-11 w-11 rounded-full bg-white p-0.5" />
             <div className="leading-tight">
               <div className="font-display font-extrabold text-sm sm:text-base">Calabar Buka</div>
               <div className="text-[10px] uppercase tracking-[0.3em] text-flame-yellow">& Grills</div>
@@ -171,7 +171,7 @@ function Index() {
           <div className="hidden md:flex justify-center">
             <div className="relative">
               <div className="absolute inset-0 rounded-full bg-brand-red/40 blur-3xl" />
-              <img src={logo} alt="" width={360} height={360} className="relative h-72 w-72 rounded-full bg-white p-4 shadow-2xl" />
+              <img src={logo.url} alt="" width={360} height={360} className="relative h-72 w-72 rounded-full bg-white p-4 shadow-2xl" />
             </div>
           </div>
         </div>
@@ -371,7 +371,7 @@ function Index() {
         <div className="ankara-divider" />
         <div className="container-x py-12 grid md:grid-cols-3 gap-8 items-start">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="" width={56} height={56} className="h-14 w-14 rounded-full bg-white p-1" />
+            <img src={logo.url} alt="" width={56} height={56} className="h-14 w-14 rounded-full bg-white p-1" />
             <div>
               <div className="font-display font-extrabold text-white text-lg">Calabar Buka & Grills</div>
               <div className="text-xs uppercase tracking-widest text-flame-yellow">Healthy · Tasty · Served with love</div>
