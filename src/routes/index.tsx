@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Phone, MapPin, Instagram, MessageCircle, ChevronDown, Flame, UtensilsCrossed, Menu, X } from "lucide-react";
 
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.jpg.asset.json";
 import afangAsset from "@/assets/Afang-soup.jpg.asset.json";
 import jollofAsset from "@/assets/Jollof-rice.jpg.asset.json";
 import catfishAsset from "@/assets/Catfish.jpg.asset.json";
